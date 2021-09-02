@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>УГКЦ Святого Миколая Мирликійського, м.Тернопіль</title>
+    <link rel='stylesheet' href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body onload="init()">
+    <div class="title">
+        <h1>УГКЦ Святого Миколая Мирликійського</h1>
+        <h2>Дружба, м.Тернопіль</h2>
+    </div>
+    <div id="app">
+        <div class="menu">
+            <div
+                v-bind:class="{ selected: link == mainContent }"
+                v-on:click="select(link)" v-for="(link, title) in menu">
+                {{title}}
+            </div>
+            <div>
+                <a href="http://www.google.com/maps/place/49.54134528482628,25.550822317600254">
+                    Де?
+                </a>
+            </div>
+        </div>
+        <iframe class="mainContent" :src="mainContent"></iframe>
+        <a href="https://psaltyr-u-wynogradnyku.firebaseapp.com/map.html">Загальна карта</a>
+    </div>
+</body>
+</html>
